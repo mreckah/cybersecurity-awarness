@@ -1,0 +1,623 @@
+/* === Resume / Course Layout Styles === */
+
+:root {
+  /* Light Theme - Clean Document Style */
+  --bg-main: #ffffff;
+  --bg-sidebar: #f8fafc;
+  --text-primary: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  
+  --primary: #0f172a;      /* Dark slate for accents in light mode */
+  --primary-hover: #334155;
+  --safe: #059669;         /* Muted green */
+  --danger: #dc2626;       /* Muted red */
+  --highlight: #f1f5f9;    /* Highlight background */
+  
+  --radius: 6px;
+  --font-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-mode {
+  /* Dark Theme - Editor/Code Style */
+  --bg-main: #0f172a;
+  --bg-sidebar: #020617;
+  --text-primary: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border-color: #1e293b;
+  
+  --primary: #f8fafc;      /* White/silver accent in dark mode */
+  --primary-hover: #cbd5e1;
+  --safe: #10b981;
+  --danger: #ef4444;
+  --highlight: #1e293b;
+}
+
+/* === Reset & Base Typography === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 1rem;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.text-primary { color: var(--primary) !important; }
+.text-safe { color: var(--safe) !important; }
+.text-danger { color: var(--danger) !important; }
+.text-muted { color: var(--text-muted) !important; }
+
+/* === Layout Setup === */
+.resume-wrapper {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* === Sidebar / Syllabus Menu === */
+.sidebar {
+  width: 280px;
+  padding: 3rem 2rem;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.brand i {
+  font-size: 1.5rem;
+}
+
+.sidebar-subtitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nav-item {
+  display: block;
+  padding: 0.75rem 0 0.75rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  border-left: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.nav-item:hover, .nav-item.active {
+  color: var(--text-primary);
+  border-left-color: var(--primary);
+  font-weight: 500;
+  background-color: var(--highlight);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.controls {
+  margin-top: auto;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.control-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.control-btn:hover {
+  background-color: var(--highlight);
+  color: var(--text-primary);
+  border-color: var(--primary);
+}
+
+/* === Main Course Content === */
+.main-content {
+  flex: 1;
+  padding: 4rem 10%;
+  max-width: 1000px;
+}
+
+/* Course Header */
+.course-header {
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+.summary {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.header-contact {
+  display: flex;
+  gap: 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.header-contact span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-contact i {
+  color: var(--primary);
+}
+
+/* Separators & Sections */
+.separator {
+  border: none;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 3rem 0;
+}
+
+.section {
+  margin-bottom: 5rem;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Resume Entries / Timeline style */
+.resume-entry {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.resume-entry::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  border: 2px solid var(--bg-main);
+  box-shadow: 0 0 0 2px var(--border-color);
+  transition: var(--transition);
+}
+
+.resume-entry:hover::before {
+  background-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+/* Connect the dots with a line if desired */
+.resume-section {
+  position: relative;
+}
+
+.resume-section::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 3.5rem; /* Below the section title */
+  bottom: 1rem;
+  width: 2px;
+  background-color: var(--border-color);
+  z-index: 0;
+}
+
+.entry-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.entry-header h3 {
+  font-size: 1.25rem;
+}
+
+.entry-badge {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  border: 1px solid currentColor;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.entry-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 650px;
+}
+
+/* Lists */
+.resume-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.resume-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+}
+
+.resume-list li::before {
+  content: '-';
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+}
+
+.large-list li {
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+}
+
+.large-list strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Alerts */
+.alert-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background-color: var(--highlight);
+  border-left: 3px solid var(--danger);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-bottom: 2rem;
+}
+.alert-box i {
+  color: var(--danger);
+  font-size: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+/* Checklist UI for Resume Style */
+.checklist-container {
+  padding-left: 1rem;
+}
+
+.checklist-progress {
+  height: 4px;
+  background-color: var(--border-color);
+  border-radius: 2px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: var(--primary);
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.interactive-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.check-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-main);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.check-item:hover .check-box {
+  border-color: var(--text-muted);
+}
+
+.check-item.checked .check-box {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.check-item.checked .check-box::after {
+  content: '✓';
+  color: var(--bg-main);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.check-item.checked span {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* Quiz UI in Document Style */
+.quiz-container {
+  padding-top: 1rem;
+  max-width: 600px;
+}
+
+.quiz-header {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.question-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.option-btn {
+  text-align: left;
+  padding: 1rem 1.25rem;
+  background-color: var(--highlight);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.option-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+
+.option-btn.correct {
+  border-color: var(--safe);
+  background-color: rgba(16, 185, 129, 0.05);
+  color: var(--safe);
+}
+
+.option-btn.incorrect {
+  border-color: var(--danger);
+  background-color: rgba(239, 68, 68, 0.05);
+  color: var(--danger);
+  text-decoration: line-through;
+}
+
+.btn-next {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: inherit;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: var(--radius);
+  cursor: pointer;
+  display: none;
+}
+.btn-next:hover {
+  background: var(--primary);
+  color: var(--bg-main);
+}
+
+.quiz-result {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+/* Footer */
+.footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  margin: 0 0.25rem;
+}
+.footer-links a:hover {
+  color: var(--text-primary);
+}
+
+/* Animations */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Mobile Settings */
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--bg-main);
+  border: none;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .resume-wrapper {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 2rem;
+  }
+  
+  .controls {
+    flex-direction: row;
+    padding-top: 1.5rem;
+  }
+  
+  .main-content {
+    padding: 3rem 2rem;
+  }
+  
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-links.show-mobile {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
