@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CyberAware — Cybersecurity Awareness Course</title>
+  <title>CyberAware — Cybersecurity Course</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,15 +14,15 @@
 
 <div class="resume-wrapper">
 
-  <!-- ===== SIDEBAR ===== -->
+  <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
     <div class="brand">
-      <i class="fa-solid fa-graduation-cap text-primary"></i>
+      <i class="fa-solid fa-graduation-cap"></i>
       <span>CyberAware</span>
     </div>
     <p class="sidebar-subtitle" data-i18n="sidebar.label">Employee Training</p>
 
-    <nav class="nav-links">
+    <nav class="nav-links" id="nav-links">
       <ul>
         <li><a href="#intro"     class="nav-item" data-i18n="nav.intro">Introduction</a></li>
         <li><a href="#social"    class="nav-item" data-i18n="nav.social">Social Engineering</a></li>
@@ -38,290 +38,249 @@
 
     <div class="controls">
       <button id="lang-toggle" class="control-btn">
-        <i class="fa-solid fa-language"></i>
-        <span id="current-lang">EN</span>
+        <i class="fa-solid fa-language"></i> <span id="current-lang">EN</span>
       </button>
       <button id="theme-toggle" class="control-btn">
-        <i class="fa-solid fa-moon theme-icon"></i>
-        <span data-i18n="btn.theme">Theme</span>
+        <i class="fa-solid fa-moon theme-icon"></i> <span data-i18n="btn.theme">Theme</span>
       </button>
     </div>
   </aside>
 
-  <!-- ===== MAIN CONTENT ===== -->
+  <!-- MAIN -->
   <main class="main-content">
 
-    <!-- COURSE HEADER -->
+    <!-- HEADER -->
     <header class="course-header section" id="hero">
-      <div class="header-badge" data-i18n="hero.badge">🔐 Security First</div>
+      <div class="header-badge" data-i18n="hero.badge">Security First</div>
       <h1 class="title" data-i18n="hero.title">Cybersecurity Awareness for Employees</h1>
       <p class="summary" data-i18n="hero.subtitle">Protect your data, your identity, and your organization from modern cyber threats. Cybersecurity starts with you.</p>
       <div class="header-meta">
-        <span><i class="fa-solid fa-calendar-days"></i> <span data-i18n="hero.meta1">Module 1 — Core Fundamentals</span></span>
-        <span><i class="fa-solid fa-building"></i> <span data-i18n="hero.meta2">HR Security Training</span></span>
+        <span><i class="fa-regular fa-calendar"></i> <span data-i18n="hero.meta1">Module 1 — Core Fundamentals</span></span>
+        <span><i class="fa-regular fa-building"></i> <span data-i18n="hero.meta2">HR Security Training</span></span>
       </div>
       <div class="hero-cta-row">
         <a href="#checklist" class="btn-primary-link" data-i18n="hero.cta1">View Checklist</a>
-        <a href="#quiz" class="btn-outline-link" data-i18n="hero.cta2">Take the Quiz</a>
+        <a href="#quiz"      class="btn-outline-link"  data-i18n="hero.cta2">Take the Quiz</a>
       </div>
     </header>
 
     <hr class="separator">
 
     <!-- 1. INTRODUCTION -->
-    <section id="intro" class="section resume-section fade-in-section">
-      <h2 class="section-title"><i class="fa-solid fa-circle-info text-primary"></i> <span data-i18n="nav.intro">Introduction</span></h2>
-      <p class="section-lead" data-i18n="intro.p1">Cybersecurity is a shared responsibility across the entire organization. Every employee, regardless of their role, interacts with systems, data, and networks that can be targeted by attackers.</p>
-      <p class="section-lead" data-i18n="intro.p2">Simple daily actions—such as opening an email, clicking a link, connecting to Wi-Fi, or installing software—can create vulnerabilities if not handled carefully.</p>
+    <section id="intro" class="section fade-in-section">
+      <h2 class="section-title"><i class="fa-solid fa-circle-info"></i> <span data-i18n="nav.intro">Introduction</span></h2>
+      <p data-i18n="intro.p1">Cybersecurity is a shared responsibility across the entire organization. Every employee, regardless of their role, interacts with systems, data, and networks that can be targeted by attackers.</p>
+      <p data-i18n="intro.p2">Simple daily actions — such as opening an email, clicking a link, connecting to Wi-Fi, or installing software — can create vulnerabilities if not handled carefully.</p>
       <div class="callout callout-info">
         <i class="fa-solid fa-lightbulb"></i>
-        <span data-i18n="intro.callout">Cybercriminals often exploit <strong>human behavior</strong> rather than technical weaknesses. Awareness is your best defense.</span>
+        <span data-i18n="intro.callout">Cybercriminals often exploit human behavior rather than technical weaknesses. Your awareness and vigilance are the best defenses.</span>
       </div>
     </section>
 
     <!-- 2. SOCIAL ENGINEERING -->
-    <section id="social" class="section resume-section fade-in-section">
-      <h2 class="section-title"><i class="fa-solid fa-masks-theater text-danger"></i> <span data-i18n="nav.social">Social Engineering</span></h2>
-      <p class="section-lead" data-i18n="social.lead">Attackers manipulate people into revealing confidential information or taking unsafe actions — without any hacking required.</p>
+    <section id="social" class="section fade-in-section">
+      <h2 class="section-title"><i class="fa-solid fa-masks-theater"></i> <span data-i18n="nav.social">Social Engineering</span></h2>
+      <p data-i18n="social.lead">Attackers manipulate people into revealing confidential information or taking unsafe actions — no hacking required.</p>
 
-      <h3 class="sub-title" data-i18n="label.types">Common Attack Types</h3>
-      <div class="card-grid">
-        <div class="info-card">
-          <div class="info-card-icon text-danger"><i class="fa-solid fa-envelope-open-text"></i></div>
-          <div>
-            <strong data-i18n="social.phish.title">Phishing</strong>
-            <p data-i18n="social.phish.desc">Fake emails that look real, designed to steal your login or data. Always check the sender's actual address.</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-icon text-danger"><i class="fa-solid fa-phone-volume"></i></div>
-          <div>
-            <strong data-i18n="social.vish.title">Vishing</strong>
-            <p data-i18n="social.vish.desc">Attackers call pretending to be IT support or your bank. Never share passwords over the phone.</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-icon text-danger"><i class="fa-solid fa-comment-sms"></i></div>
-          <div>
-            <strong data-i18n="social.smish.title">Smishing</strong>
-            <p data-i18n="social.smish.desc">Phishing via SMS text messages. Treat all unexpected links in texts with suspicion.</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-icon text-danger"><i class="fa-solid fa-share-nodes"></i></div>
-          <div>
-            <strong data-i18n="social.share.title">Oversharing Online</strong>
-            <p data-i18n="social.share.desc">Posting work details on social media gives attackers free intelligence. Keep professional info private.</p>
-          </div>
-        </div>
+      <p class="sub-title" data-i18n="label.types">Common Attack Types</p>
+
+      <div class="block">
+        <h3 data-i18n="social.phish.title">Phishing</h3>
+        <p data-i18n="social.phish.desc">Fake emails that look real, designed to steal your login or data. Always check the sender's actual email address.</p>
+      </div>
+      <div class="block">
+        <h3 data-i18n="social.vish.title">Vishing</h3>
+        <p data-i18n="social.vish.desc">Attackers call pretending to be IT support or your bank. Never share passwords over the phone.</p>
+      </div>
+      <div class="block">
+        <h3 data-i18n="social.smish.title">Smishing</h3>
+        <p data-i18n="social.smish.desc">Phishing via SMS text messages. Treat all unexpected links in texts with suspicion.</p>
+      </div>
+      <div class="block">
+        <h3 data-i18n="social.share.title">Oversharing Online</h3>
+        <p data-i18n="social.share.desc">Posting work details on social media gives attackers free intelligence. Keep professional information private.</p>
       </div>
 
-      <div class="two-col">
-        <div class="tag-group">
-          <h4 data-i18n="label.risks">⚠️ Risks</h4>
-          <span class="tag tag-danger" data-i18n="social.risk1">Identity theft</span>
-          <span class="tag tag-danger" data-i18n="social.risk2">Unauthorized access</span>
-          <span class="tag tag-danger" data-i18n="social.risk3">Financial loss</span>
-          <span class="tag tag-danger" data-i18n="social.risk4">Data breach</span>
+      <div class="two-col-text">
+        <div class="col-block">
+          <h4 data-i18n="label.risks">Risks</h4>
+          <ul class="plain-list">
+            <li data-i18n="social.risk1">Identity theft</li>
+            <li data-i18n="social.risk2">Unauthorized access</li>
+            <li data-i18n="social.risk3">Financial loss</li>
+            <li data-i18n="social.risk4">Data breach</li>
+          </ul>
         </div>
-        <div class="tag-group">
-          <h4 data-i18n="label.bestpractices">✅ Best Practices</h4>
-          <span class="tag tag-safe" data-i18n="social.bp1">Verify the sender</span>
-          <span class="tag tag-safe" data-i18n="social.bp2">Do not click suspicious links</span>
-          <span class="tag tag-safe" data-i18n="social.bp3">Never share passwords</span>
-          <span class="tag tag-safe" data-i18n="social.bp4">Be suspicious of urgency</span>
+        <div class="col-block">
+          <h4 data-i18n="label.bestpractices">Best Practices</h4>
+          <ul class="plain-list">
+            <li data-i18n="social.bp1">Verify the sender before responding</li>
+            <li data-i18n="social.bp2">Do not click on suspicious links</li>
+            <li data-i18n="social.bp3">Never share passwords or sensitive data</li>
+            <li data-i18n="social.bp4">Be suspicious of urgent or unusual requests</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- 3. WIRELESS SECURITY -->
-    <section id="wireless" class="section resume-section fade-in-section">
-      <h2 class="section-title"><i class="fa-solid fa-wifi text-primary"></i> <span data-i18n="nav.wireless">Wireless Security</span></h2>
-      <p class="section-lead" data-i18n="wireless.lead">Wireless networks, especially public ones, are often unsecured and can be exploited to intercept your data.</p>
+    <section id="wireless" class="section fade-in-section">
+      <h2 class="section-title"><i class="fa-solid fa-wifi"></i> <span data-i18n="nav.wireless">Wireless Security</span></h2>
+      <p data-i18n="wireless.lead">Wireless networks, especially public ones, are often unsecured and can be exploited to intercept your data.</p>
 
       <div class="callout callout-danger">
         <i class="fa-solid fa-triangle-exclamation"></i>
         <span data-i18n="wireless.warning">Never access sensitive company data or banking apps on public Wi-Fi without a VPN. Attackers may create fake hotspots with familiar names.</span>
       </div>
 
-      <div class="card-grid two-wide">
-        <div class="info-card vertical">
-          <i class="fa-solid fa-house-signal text-primary card-top-icon"></i>
-          <strong data-i18n="wireless.home.title">Home Wi-Fi Safety</strong>
-          <ul class="resume-list">
-            <li data-i18n="wireless.home.l1">Change the default router password</li>
-            <li data-i18n="wireless.home.l2">Use WPA2 or WPA3 encryption</li>
-            <li data-i18n="wireless.home.l3">Keep router firmware up to date</li>
-            <li data-i18n="wireless.home.l4">Disable auto-connect to unknown networks</li>
-          </ul>
-        </div>
-        <div class="info-card vertical">
-          <i class="fa-solid fa-shield-halved text-safe card-top-icon"></i>
-          <strong data-i18n="wireless.vpn.title">Using a VPN</strong>
-          <ul class="resume-list">
-            <li data-i18n="wireless.vpn.l1">Use the corporate VPN on public networks</li>
-            <li data-i18n="wireless.vpn.l2">Connect before accessing company resources</li>
-            <li data-i18n="wireless.vpn.l3">Keep VPN software up to date</li>
-          </ul>
-        </div>
+      <div class="block">
+        <h3 data-i18n="wireless.home.title">Home Wi-Fi Safety</h3>
+        <ul class="plain-list">
+          <li data-i18n="wireless.home.l1">Change the default router password</li>
+          <li data-i18n="wireless.home.l2">Use WPA2 or WPA3 encryption</li>
+          <li data-i18n="wireless.home.l3">Keep router firmware up to date</li>
+          <li data-i18n="wireless.home.l4">Disable auto-connect to unknown networks</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h3 data-i18n="wireless.vpn.title">Using a VPN</h3>
+        <ul class="plain-list">
+          <li data-i18n="wireless.vpn.l1">Use the corporate VPN on all public networks</li>
+          <li data-i18n="wireless.vpn.l2">Connect before accessing company resources</li>
+          <li data-i18n="wireless.vpn.l3">Keep VPN software up to date</li>
+        </ul>
       </div>
     </section>
 
     <!-- 4. ACCOUNT SECURITY -->
-    <section id="account" class="section resume-section fade-in-section">
-      <h2 class="section-title"><i class="fa-solid fa-key text-primary"></i> <span data-i18n="nav.account">Account Security</span></h2>
-      <p class="section-lead" data-i18n="account.lead">User accounts are one of the most targeted entry points. A compromised account can give an attacker access to everything you can access.</p>
+    <section id="account" class="section fade-in-section">
+      <h2 class="section-title"><i class="fa-solid fa-key"></i> <span data-i18n="nav.account">Account Security</span></h2>
+      <p data-i18n="account.lead">User accounts are one of the most targeted entry points. A compromised account can give an attacker access to everything you can access.</p>
 
-      <div class="card-grid two-wide">
-        <div class="info-card vertical">
-          <i class="fa-solid fa-lock card-top-icon text-primary"></i>
-          <strong data-i18n="account.pass.title">Strong Passwords</strong>
-          <p data-i18n="account.pass.desc">Use passphrases like "BlueHorse!RunsFast". Avoid short or obvious passwords. Never reuse passwords across sites.</p>
-          <ul class="resume-list">
-            <li data-i18n="account.pass.l1">Minimum 12 characters</li>
-            <li data-i18n="account.pass.l2">Mix letters, numbers, symbols</li>
-            <li data-i18n="account.pass.l3">Use a password manager</li>
-          </ul>
-        </div>
-        <div class="info-card vertical">
-          <i class="fa-solid fa-mobile-screen-button card-top-icon text-safe"></i>
-          <strong data-i18n="account.mfa.title">Multi-Factor Authentication (MFA)</strong>
-          <p data-i18n="account.mfa.desc">Even if a password is stolen, MFA prevents attackers from logging in. It requires a second verification — like a code from your phone.</p>
-          <div class="callout callout-safe small">
-            <i class="fa-solid fa-circle-check"></i>
-            <span data-i18n="account.mfa.tip">Enable MFA on all work accounts, email, and cloud apps.</span>
-          </div>
+      <div class="block">
+        <h3 data-i18n="account.pass.title">Strong Passwords</h3>
+        <p data-i18n="account.pass.desc">Use passphrases like "BlueHorse!RunsFast". Avoid short or obvious passwords. Never reuse passwords across different sites.</p>
+        <ul class="plain-list">
+          <li data-i18n="account.pass.l1">Minimum 12 characters</li>
+          <li data-i18n="account.pass.l2">Mix letters, numbers, and symbols</li>
+          <li data-i18n="account.pass.l3">Use a password manager</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h3 data-i18n="account.mfa.title">Multi-Factor Authentication (MFA)</h3>
+        <p data-i18n="account.mfa.desc">Even if a password is stolen, MFA prevents attackers from logging in. It requires a second verification — like a code sent to your phone.</p>
+        <div class="callout callout-safe">
+          <i class="fa-solid fa-circle-check"></i>
+          <span data-i18n="account.mfa.tip">Enable MFA on all work accounts, email, and cloud apps.</span>
         </div>
       </div>
 
-      <div class="callout callout-danger mt-4">
+      <div class="callout callout-danger">
         <i class="fa-solid fa-database"></i>
-        <span data-i18n="account.breach">Data breaches expose millions of passwords. Check <strong>haveibeenpwned.com</strong> to see if your email has been leaked and change affected passwords immediately.</span>
+        <span data-i18n="account.breach">Data breaches expose millions of passwords. Check haveibeenpwned.com to see if your email has been leaked, and change affected passwords immediately.</span>
       </div>
     </section>
 
-    <!-- 5. SOFTWARE & INTERNET SECURITY -->
-    <section id="software" class="section resume-section fade-in-section">
-      <h2 class="section-title"><i class="fa-solid fa-laptop-code text-primary"></i> <span data-i18n="nav.software">Software & Internet Security</span></h2>
-      <p class="section-lead" data-i18n="software.lead">Software vulnerabilities are one of the most common ways attackers gain access to systems. Keeping software updated is one of the simplest and most effective defenses.</p>
+    <!-- 5. SOFTWARE SECURITY -->
+    <section id="software" class="section fade-in-section">
+      <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> <span data-i18n="nav.software">Software & Internet Security</span></h2>
+      <p data-i18n="software.lead">Software vulnerabilities are one of the most common ways attackers gain access. Keeping software updated is one of the simplest and most effective defenses.</p>
 
-      <div class="card-grid">
-        <div class="info-card">
-          <div class="info-card-icon text-primary"><i class="fa-solid fa-arrows-rotate"></i></div>
-          <div>
-            <strong data-i18n="software.updates.title">Updates & Patching</strong>
-            <p data-i18n="software.updates.desc">Updates fix known security holes (CVEs). Delaying them leaves the door open for attackers. Enable automatic updates whenever possible.</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-icon text-danger"><i class="fa-solid fa-skull-crossbones"></i></div>
-          <div>
-            <strong data-i18n="software.malware.title">Malware & Ransomware</strong>
-            <p data-i18n="software.malware.desc">Malware can steal, delete, or encrypt your files. Ransomware locks you out until you pay. Never download attachments or software from unknown sources.</p>
-          </div>
-        </div>
+      <div class="block">
+        <h3 data-i18n="software.updates.title">Updates & Patching</h3>
+        <p data-i18n="software.updates.desc">Updates fix known security holes (CVEs). Delaying them leaves the door open for attackers. Enable automatic updates whenever possible.</p>
       </div>
 
-      <h3 class="sub-title mt-4" data-i18n="software.lifecycle.title">How a Cyber Attack Works</h3>
-      <div class="lifecycle-steps">
+      <div class="block">
+        <h3 data-i18n="software.malware.title">Malware & Ransomware</h3>
+        <p data-i18n="software.malware.desc">Malware can steal, delete, or encrypt your files. Ransomware locks you out until you pay. Never download attachments or software from unknown sources.</p>
+      </div>
+
+      <p class="sub-title" data-i18n="software.lifecycle.title">How a Cyber Attack Works</p>
+      <div class="lifecycle">
         <div class="lifecycle-step">
-          <div class="step-num">1</div>
-          <div><strong data-i18n="software.step1.title">Initial Access</strong><p data-i18n="software.step1.desc">Via phishing email or known vulnerability</p></div>
+          <div class="step-num" data-i18n="software.step1.num">Step 1</div>
+          <strong data-i18n="software.step1.title">Initial Access</strong>
+          <p data-i18n="software.step1.desc">Via phishing or known vulnerability</p>
         </div>
-        <div class="lifecycle-arrow"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="lifecycle-step">
-          <div class="step-num">2</div>
-          <div><strong data-i18n="software.step2.title">Execution</strong><p data-i18n="software.step2.desc">Malware runs on the system</p></div>
+          <div class="step-num" data-i18n="software.step2.num">Step 2</div>
+          <strong data-i18n="software.step2.title">Execution</strong>
+          <p data-i18n="software.step2.desc">Malware runs on the system</p>
         </div>
-        <div class="lifecycle-arrow"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="lifecycle-step">
-          <div class="step-num">3</div>
-          <div><strong data-i18n="software.step3.title">Persistence</strong><p data-i18n="software.step3.desc">Attacker stays hidden in the system</p></div>
+          <div class="step-num" data-i18n="software.step3.num">Step 3</div>
+          <strong data-i18n="software.step3.title">Persistence</strong>
+          <p data-i18n="software.step3.desc">Attacker stays hidden</p>
         </div>
-        <div class="lifecycle-arrow"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="lifecycle-step">
-          <div class="step-num">4</div>
-          <div><strong data-i18n="software.step4.title">Exfiltration</strong><p data-i18n="software.step4.desc">Data is stolen or systems are damaged</p></div>
+          <div class="step-num" data-i18n="software.step4.num">Step 4</div>
+          <strong data-i18n="software.step4.title">Exfiltration</strong>
+          <p data-i18n="software.step4.desc">Data stolen or damages caused</p>
         </div>
       </div>
     </section>
 
     <!-- 6. HYBRID WORK -->
-    <section id="hybrid" class="section resume-section fade-in-section">
-      <h2 class="section-title"><i class="fa-solid fa-house-laptop text-primary"></i> <span data-i18n="nav.hybrid">Hybrid Work Security</span></h2>
-      <p class="section-lead" data-i18n="hybrid.lead">Working from cafes, airports, or home increases exposure to risks. Treat your device and its data as if they are the company's most valuable asset — because they are.</p>
+    <section id="hybrid" class="section fade-in-section">
+      <h2 class="section-title"><i class="fa-solid fa-house-laptop"></i> <span data-i18n="nav.hybrid">Hybrid Work Security</span></h2>
+      <p data-i18n="hybrid.lead">Working remotely increases exposure. Treat your device and its data as if they are the company's most valuable asset.</p>
 
-      <div class="card-grid">
-        <div class="info-card">
-          <div class="info-card-icon"><i class="fa-solid fa-eye-slash text-danger"></i></div>
-          <div>
-            <strong data-i18n="hybrid.physical.title">Physical Security</strong>
-            <p data-i18n="hybrid.physical.desc">Lock your screen when stepping away (Win+L / Cmd+Ctrl+Q). Never leave a device unattended in public, even for a moment.</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-icon"><i class="fa-solid fa-laptop text-primary"></i></div>
-          <div>
-            <strong data-i18n="hybrid.device.title">Device Protection</strong>
-            <p data-i18n="hybrid.device.desc">Enable full-disk encryption. Keep antivirus active. Report any lost or stolen device to IT immediately — every minute counts.</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-icon"><i class="fa-solid fa-mobile-screen text-danger"></i></div>
-          <div>
-            <strong data-i18n="hybrid.mobile.title">Mobile Threats</strong>
-            <p data-i18n="hybrid.mobile.desc">Only install apps from official app stores. Be alert for smishing (fraudulent SMS) targeting your work phone number.</p>
-          </div>
-        </div>
+      <div class="block">
+        <h3 data-i18n="hybrid.physical.title">Physical Security</h3>
+        <p data-i18n="hybrid.physical.desc">Lock your screen when stepping away (Win+L / Cmd+Ctrl+Q). Never leave a device unattended in public, even for a moment.</p>
+      </div>
+      <div class="block">
+        <h3 data-i18n="hybrid.device.title">Device Protection</h3>
+        <p data-i18n="hybrid.device.desc">Enable full-disk encryption. Keep antivirus active. Report any lost or stolen device to IT immediately — every minute counts.</p>
+      </div>
+      <div class="block">
+        <h3 data-i18n="hybrid.mobile.title">Mobile Threats</h3>
+        <p data-i18n="hybrid.mobile.desc">Only install apps from official app stores. Be alert for smishing (fraudulent SMS) targeting your work phone number.</p>
       </div>
 
       <div class="scenario-box">
-        <h4 data-i18n="hybrid.scenario.title">📖 Scenario: Stolen Laptop</h4>
-        <p data-i18n="hybrid.scenario.desc">An employee leaves their laptop in a café for 5 minutes. It is stolen. If the disk is not encrypted and the screen is unlocked, an attacker has immediate access to all company systems, emails, and files. <strong>Encryption + screen lock = time to respond.</strong></p>
+        <h4 data-i18n="hybrid.scenario.title">Scenario: Stolen Laptop</h4>
+        <p data-i18n="hybrid.scenario.desc">An employee leaves their laptop in a café for 5 minutes. It is stolen. If the disk is not encrypted and the screen is unlocked, an attacker has immediate access to all company systems and files. Encryption + screen lock = time to respond.</p>
       </div>
     </section>
 
     <!-- 7. DATA SECURITY -->
-    <section id="data" class="section resume-section fade-in-section">
-      <h2 class="section-title"><i class="fa-solid fa-database text-primary"></i> <span data-i18n="nav.data">Data Security</span></h2>
-      <p class="section-lead" data-i18n="data.lead">Data is one of the most valuable and most targeted assets of any organization. Protecting it is both a legal obligation and an ethical responsibility.</p>
+    <section id="data" class="section fade-in-section">
+      <h2 class="section-title"><i class="fa-solid fa-database"></i> <span data-i18n="nav.data">Data Security</span></h2>
+      <p data-i18n="data.lead">Data is one of the most valuable and most targeted assets of any organization. Protecting it is both a legal obligation and an ethical responsibility.</p>
 
-      <div class="card-grid">
-        <div class="info-card">
-          <div class="info-card-icon text-primary"><i class="fa-solid fa-lightbulb"></i></div>
-          <div>
-            <strong data-i18n="data.ip.title">Intellectual Property</strong>
-            <p data-i18n="data.ip.desc">Source code, product designs, trade secrets. Never share externally without authorization.</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-icon text-danger"><i class="fa-solid fa-users"></i></div>
-          <div>
-            <strong data-i18n="data.customer.title">Customer Data</strong>
-            <p data-i18n="data.customer.desc">Personal & financial info protected by GDPR and other laws. A breach can result in major fines and loss of trust.</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-icon text-primary"><i class="fa-solid fa-id-card"></i></div>
-          <div>
-            <strong data-i18n="data.employee.title">Employee Data</strong>
-            <p data-i18n="data.employee.desc">HR records, health info, salaries. Treat this with the highest level of confidentiality.</p>
-          </div>
-        </div>
+      <div class="block">
+        <h3 data-i18n="data.ip.title">Intellectual Property</h3>
+        <p data-i18n="data.ip.desc">Source code, product designs, trade secrets. Never share externally without explicit authorization.</p>
+      </div>
+      <div class="block">
+        <h3 data-i18n="data.customer.title">Customer Data</h3>
+        <p data-i18n="data.customer.desc">Personal and financial information protected by GDPR and other laws. A breach can result in major fines and permanent loss of trust.</p>
+      </div>
+      <div class="block">
+        <h3 data-i18n="data.employee.title">Employee Data</h3>
+        <p data-i18n="data.employee.desc">HR records, health info, salaries. Treat this with the highest level of confidentiality.</p>
       </div>
 
-      <div class="two-col mt-4">
-        <div class="tag-group">
-          <h4 data-i18n="label.risks">⚠️ Risks</h4>
-          <span class="tag tag-danger" data-i18n="data.risk1">Data leaks</span>
-          <span class="tag tag-danger" data-i18n="data.risk2">Unauthorized sharing</span>
-          <span class="tag tag-danger" data-i18n="data.risk3">Compliance violations (GDPR)</span>
+      <div class="two-col-text">
+        <div class="col-block">
+          <h4 data-i18n="label.risks">Risks</h4>
+          <ul class="plain-list">
+            <li data-i18n="data.risk1">Data leaks</li>
+            <li data-i18n="data.risk2">Unauthorized sharing</li>
+            <li data-i18n="data.risk3">Compliance violations (GDPR)</li>
+          </ul>
         </div>
-        <div class="tag-group">
-          <h4 data-i18n="label.bestpractices">✅ Best Practices</h4>
-          <span class="tag tag-safe" data-i18n="data.bp1">Share only when necessary</span>
-          <span class="tag tag-safe" data-i18n="data.bp2">Follow company policies</span>
-          <span class="tag tag-safe" data-i18n="data.bp3">Store data in approved systems</span>
+        <div class="col-block">
+          <h4 data-i18n="label.bestpractices">Best Practices</h4>
+          <ul class="plain-list">
+            <li data-i18n="data.bp1">Share only when necessary</li>
+            <li data-i18n="data.bp2">Follow company policies</li>
+            <li data-i18n="data.bp3">Store data in approved systems only</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -329,16 +288,14 @@
     <hr class="separator">
 
     <!-- 8. CHECKLIST -->
-    <section id="checklist" class="section resume-section fade-in-section">
-      <h2 class="section-title"><i class="fa-solid fa-list-check text-safe"></i> <span data-i18n="nav.checklist">Best Practices Checklist</span></h2>
-      <p class="section-lead" data-i18n="checklist.lead">Click each item to confirm you follow this practice. Build good habits one step at a time.</p>
+    <section id="checklist" class="section fade-in-section">
+      <h2 class="section-title"><i class="fa-solid fa-list-check"></i> <span data-i18n="nav.checklist">Best Practices Checklist</span></h2>
+      <p data-i18n="checklist.lead">Click each item to confirm you follow this practice.</p>
 
-      <div class="checklist-container">
-        <div class="checklist-progress-bar">
-          <div class="progress-fill" id="progress-bar"></div>
-        </div>
+      <div class="checklist-wrap">
+        <div class="checklist-progress-bar"><div class="progress-fill" id="progress-bar"></div></div>
         <p class="progress-text"><span id="progress-count">0</span>/7 <span data-i18n="checklist.done">completed</span></p>
-        <ul class="interactive-checklist" id="interactive-checklist">
+        <ul class="interactive-checklist">
           <li class="check-item"><div class="check-box"></div><span data-i18n="checklist.i1">I use unique, strong passwords for every account.</span></li>
           <li class="check-item"><div class="check-box"></div><span data-i18n="checklist.i2">I have MFA enabled on all work accounts.</span></li>
           <li class="check-item"><div class="check-box"></div><span data-i18n="checklist.i3">I avoid clicking suspicious links or attachments.</span></li>
@@ -351,24 +308,24 @@
     </section>
 
     <!-- 9. QUIZ -->
-    <section id="quiz" class="section resume-section fade-in-section">
-      <h2 class="section-title"><i class="fa-solid fa-brain text-primary"></i> <span data-i18n="nav.quiz">Knowledge Quiz</span></h2>
-      <p class="section-lead" data-i18n="quiz.lead">Answer the following questions to test your understanding. Select the best answer for each question.</p>
-      <div class="quiz-container" id="quiz-container"></div>
+    <section id="quiz" class="section fade-in-section">
+      <h2 class="section-title"><i class="fa-solid fa-brain"></i> <span data-i18n="nav.quiz">Knowledge Quiz</span></h2>
+      <p data-i18n="quiz.lead">Answer the following questions to test your understanding. Select the best answer for each question.</p>
+      <div class="quiz-wrap" id="quiz-container"></div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <p class="footer-message"><i class="fa-solid fa-shield-halved text-safe"></i> <span data-i18n="footer.msg">You are part of the security team. Every action counts.</span></p>
+      <p class="footer-message"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="footer.msg">You are part of the security team. Every action counts.</span></p>
       <div class="footer-links">
         <a href="#" data-i18n="footer.policy">Security Policy</a>
         <a href="#" data-i18n="footer.report">Report Incident</a>
       </div>
     </footer>
+
   </main>
 </div>
 
-<!-- Mobile sidebar toggle -->
 <button class="fab" id="mobile-menu-btn" aria-label="Menu">
   <i class="fa-solid fa-bars"></i>
 </button>
