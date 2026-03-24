@@ -5,6 +5,7 @@ const translations = {
   en: {
     // Sidebar / Nav
     "sidebar.label":   "Employee Training",
+    "profile.role":    "Security Instructor",
     "nav.intro":       "Introduction",
     "nav.social":      "Social Engineering",
     "nav.wireless":    "Wireless Security",
@@ -155,6 +156,7 @@ const translations = {
   fr: {
     // Sidebar / Nav
     "sidebar.label":   "Formation Employés",
+    "profile.role":    "Instructeur de Sécurité",
     "nav.intro":       "Introduction",
     "nav.social":      "Ingénierie Sociale",
     "nav.wireless":    "Sécurité Sans Fil",
