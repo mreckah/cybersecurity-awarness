@@ -551,58 +551,6 @@ li { color: var(--text-secondary); margin-bottom: 0.5rem; }
 .scenario-box h4 { font-size: 1.05rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
 .scenario-box p  { font-size: 0.95rem; margin: 0; color: var(--text-secondary); line-height: 1.6; }
 
-/* === CHECKLIST === */
-.checklist-wrap { max-width: 680px; }
-
-.checklist-progress-bar {
-  height: 6px;
-  background: var(--border-color);
-  border-radius: 3px;
-  margin-bottom: 0.5rem;
-  overflow: hidden;
-}
-.progress-fill {
-  height: 100%; width: 0%;
-  background: var(--safe);
-  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.progress-text {
-  font-size: 0.85rem; color: var(--text-muted); font-weight: 600; margin-bottom: 1.5rem;
-  display: flex; justify-content: space-between;
-}
-
-.interactive-checklist { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
-
-.check-item {
-  display: flex; align-items: center; gap: 1rem;
-  padding: 1rem 1.25rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  cursor: pointer; font-size: 0.95rem; font-weight: 500;
-  transition: var(--transition);
-  box-shadow: var(--shadow-sm);
-}
-.check-item:hover { border-color: var(--border-hover); transform: translateX(2px); }
-.check-item.checked {
-  border-color: var(--safe);
-  background: rgba(16, 185, 129, 0.04);
-}
-.check-item.checked span { text-decoration: line-through; color: var(--text-muted); }
-
-.check-box {
-  width: 22px; height: 22px;
-  border: 2px solid var(--border-hover);
-  border-radius: 6px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.8rem; transition: var(--transition);
-  background: var(--bg-card);
-}
-.check-item.checked .check-box {
-  background: var(--safe); border-color: var(--safe); color: #fff;
-}
-.check-item.checked .check-box::after { content: '✓'; }
-
 /* === QUIZ === */
 .quiz-wrap {
   max-width: 680px;

@@ -305,83 +305,12 @@ const translations = {
   }
 };
 
-// =====================================================
-//  QUIZ DATA
-// =====================================================
-const quizData = {
-  en: [
-    {
-      q: "What is the main goal of a phishing email?",
-      options: ["Improve security awareness", "Steal sensitive information or credentials", "Update your software"],
-      correct: 1,
-      explanation: "Phishing emails are crafted to trick users into giving up passwords, credit card numbers, or other sensitive data."
-    },
-    {
-      q: "What is the safest way to handle public Wi-Fi?",
-      options: ["Access your bank account normally", "Use a VPN or avoid sensitive tasks entirely", "Share your hotspot password"],
-      correct: 1,
-      explanation: "A VPN encrypts your traffic, making it much harder for attackers to intercept on public networks."
-    },
-    {
-      q: "Why is Multi-Factor Authentication (MFA) important?",
-      options: ["It completely replaces the need for passwords", "It adds a second layer of security even if your password is stolen", "It makes login faster"],
-      correct: 1,
-      explanation: "MFA means an attacker with your password still cannot log in without also having your second factor (e.g., your phone)."
-    },
-    {
-      q: "You receive an unexpected link in an email. What should you do?",
-      options: ["Click it immediately to check what it is", "Verify with the sender via a separate channel before clicking", "Forward it to colleagues"],
-      correct: 1,
-      explanation: "Always verify unexpected links out-of-band (call, Slack, etc.) before clicking — even if the sender appears to be someone you know."
-    },
-    {
-      q: "What is ransomware?",
-      options: ["A type of firewall that protects your system", "Malware that encrypts your files and demands payment to restore access", "A tool to safely back up your data"],
-      correct: 1,
-      explanation: "Ransomware locks your files until you pay the attacker. Regular backups and keeping software updated are the best defenses."
-    }
-  ],
-  fr: [
-    {
-      q: "Quel est l'objectif principal d'un email de phishing ?",
-      options: ["Améliorer la sensibilisation à la sécurité", "Voler des informations sensibles ou des identifiants", "Mettre à jour vos logiciels"],
-      correct: 1,
-      explanation: "Les emails de phishing sont conçus pour tromper les utilisateurs et leur soutirer mots de passe et données sensibles."
-    },
-    {
-      q: "Quelle est la manière la plus sûre d'utiliser un Wi-Fi public ?",
-      options: ["Accéder normalement à votre compte bancaire", "Utiliser un VPN ou éviter toute tâche sensible", "Partager le mot de passe de votre point d'accès"],
-      correct: 1,
-      explanation: "Un VPN chiffre votre trafic, rendant l'interception beaucoup plus difficile pour les attaquants sur les réseaux publics."
-    },
-    {
-      q: "Pourquoi le MFA (authentification multifacteur) est-il important ?",
-      options: ["Il remplace entièrement les mots de passe", "Il ajoute une couche supplémentaire même si votre mot de passe est volé", "Il accélère la connexion"],
-      correct: 1,
-      explanation: "Avec le MFA, un attaquant qui a votre mot de passe ne peut toujours pas se connecter sans votre deuxième facteur (ex : votre téléphone)."
-    },
-    {
-      q: "Vous recevez un lien inattendu par email. Que faites-vous ?",
-      options: ["Cliquer immédiatement pour vérifier", "Contacter l'expéditeur par un autre moyen avant de cliquer", "Le transférer à des collègues"],
-      correct: 1,
-      explanation: "Vérifiez toujours les liens inattendus hors canal (appel, Slack) avant de cliquer, même si l'expéditeur semble familier."
-    },
-    {
-      q: "Qu'est-ce qu'un ransomware ?",
-      options: ["Un pare-feu qui protège votre système", "Un malware qui chiffre vos fichiers et demande une rançon", "Un outil de sauvegarde sécurisé"],
-      correct: 1,
-      explanation: "Un ransomware bloque l'accès à vos fichiers jusqu'au paiement. Sauvegardes régulières et mises à jour sont les meilleures défenses."
-    }
-  ]
-};
 
 // =====================================================
 //  STATE
 // =====================================================
 let lang  = localStorage.getItem('ca_lang')  || 'en';
 let theme = localStorage.getItem('ca_theme') || 'dark';
-let currentQ = 0;
-let score    = 0;
 
 // =====================================================
 //  INIT
@@ -389,8 +318,6 @@ let score    = 0;
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme(theme);
   applyLang(lang);
-  initChecklist();
-  renderQuiz();
   initScrollSpy();
   initAnimations();
   initMobileMenu();
@@ -399,7 +326,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lang = lang === 'en' ? 'fr' : 'en';
     localStorage.setItem('ca_lang', lang);
     applyLang(lang);
-    renderQuiz(); // re-render quiz in new lang
   });
 
   document.getElementById('theme-toggle').addEventListener('click', () => {
@@ -434,96 +360,14 @@ function applyLang(l) {
     const key = el.getAttribute('data-i18n');
     if (dict[key] !== undefined) el.textContent = dict[key];
   });
-}
 
-// =====================================================
-//  CHECKLIST
-// =====================================================
-function initChecklist() {
-  const items = document.querySelectorAll('.check-item');
-  const bar   = document.getElementById('progress-bar');
-  const count = document.getElementById('progress-count');
-  const total = items.length;
-  let done = 0;
-
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('checked');
-      done = document.querySelectorAll('.check-item.checked').length;
-      count.textContent = done;
-      bar.style.width = ((done / total) * 100) + '%';
-    });
-  });
-}
-
-// =====================================================
-//  QUIZ
-// =====================================================
-function renderQuiz() {
-  currentQ = 0; score = 0;
-  showQuestion();
-}
-
-function showQuestion() {
-  const container = document.getElementById('quiz-container');
-  const dict = translations[lang];
-  const questions = quizData[lang];
-
-  if (currentQ >= questions.length) {
-    const pct = Math.round((score / questions.length) * 100);
-    const label = pct >= 80 ? dict['quiz.result.excellent'] : pct >= 50 ? dict['quiz.result.good'] : dict['quiz.result.review'];
-    container.innerHTML = `
-      <div class="quiz-result">
-        <h3>${dict['quiz.result.title']}</h3>
-        <div class="score-circle">${score}/${questions.length}</div>
-        <p>${label} - ${dict['quiz.result.score']}: ${pct}%</p>
-        <button class="btn-next" style="display:inline-block; margin-top:1.5rem" onclick="renderQuiz()">
-          ${dict['quiz.btn.restart']}
-        </button>
-      </div>`;
-    return;
+  // Automatically swap infographic image file based on translated language
+  const infoGraphic = document.getElementById('hero-infographic');
+  if (infoGraphic) {
+    infoGraphic.src = (l === 'fr') ? 'image_.png' : 'image.png';
   }
-
-  const q = questions[currentQ];
-  const optionsHTML = q.options.map((opt, i) =>
-    `<button class="option-btn" data-index="${i}">${opt}</button>`
-  ).join('');
-
-  container.innerHTML = `
-    <div class="quiz-header">Question ${currentQ + 1} / ${questions.length}</div>
-    <div class="question-text">${q.q}</div>
-    <div class="options-grid">${optionsHTML}</div>
-    <div class="quiz-feedback" id="quiz-feedback"></div>
-    <button class="btn-next" id="btn-next">${dict['quiz.btn.next']}</button>
-  `;
-
-  const optBtns = container.querySelectorAll('.option-btn');
-  const feedback = document.getElementById('quiz-feedback');
-  const nextBtn  = document.getElementById('btn-next');
-
-  optBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      optBtns.forEach(b => b.disabled = true);
-      const chosen = parseInt(btn.getAttribute('data-index'));
-
-      if (chosen === q.correct) {
-        btn.classList.add('correct');
-        score++;
-        feedback.textContent = 'Correct: ' + q.explanation;
-        feedback.className = 'quiz-feedback correct-fb show';
-      } else {
-        btn.classList.add('incorrect');
-        optBtns[q.correct].classList.add('correct');
-        feedback.textContent = 'Incorrect: ' + q.explanation;
-        feedback.className = 'quiz-feedback incorrect-fb show';
-      }
-
-      nextBtn.style.display = 'inline-block';
-    });
-  });
-
-  nextBtn.addEventListener('click', () => { currentQ++; showQuestion(); });
 }
+
 
 // =====================================================
 //  SCROLL SPY

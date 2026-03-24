@@ -36,8 +36,6 @@
         <li><a href="#software"  class="nav-item"><i class="fa-solid fa-laptop-code fa-fw" style="margin-right: 12px; opacity:0.6;"></i> <span data-i18n="nav.software">Software Security</span></a></li>
         <li><a href="#hybrid"    class="nav-item"><i class="fa-solid fa-mug-hot fa-fw" style="margin-right: 12px; opacity:0.6;"></i> <span data-i18n="nav.hybrid">Hybrid Work</span></a></li>
         <li><a href="#data"      class="nav-item"><i class="fa-solid fa-database fa-fw" style="margin-right: 12px; opacity:0.6;"></i> <span data-i18n="nav.data">Data Security</span></a></li>
-        <li><a href="#checklist" class="nav-item"><i class="fa-solid fa-list-check fa-fw" style="margin-right: 12px; opacity:0.6;"></i> <span data-i18n="nav.checklist">Checklist</span></a></li>
-        <li><a href="#quiz"      class="nav-item"><i class="fa-solid fa-brain fa-fw" style="margin-right: 12px; opacity:0.6;"></i> <span data-i18n="nav.quiz">Quiz</span></a></li>
       </ul>
     </nav>
 
@@ -68,16 +66,12 @@
         <span><i class="fa-solid fa-briefcase"></i> <span data-i18n="hero.meta2">HR Security Training</span></span>
       </div>
       
-      <div class="hero-cta-row fade-in-section is-visible" style="transition-delay: 0.4s;">
-        <a href="#checklist" class="btn-primary"><i class="fa-solid fa-list-check" style="margin-right: 8px;"></i> <span data-i18n="hero.cta1">View Checklist</span></a>
-        <a href="#quiz" class="btn-outline"><i class="fa-solid fa-bolt" style="margin-right: 8px; color: var(--primary);"></i> <span data-i18n="hero.cta2">Take the Quiz</span></a>
-      </div>
     </header>
 
     <!-- INFOGRAPHIC SECTION -->
     <section class="section fade-in-section" style="margin-top: -2rem;">
       <div class="infographic-wrapper">
-        <img src="image.png" alt="Cybersecurity Infographic Resume" class="featured-infographic">
+        <img id="hero-infographic" src="image.png" alt="Cybersecurity Infographic Resume" class="featured-infographic">
       </div>
     </section>
 
@@ -320,44 +314,8 @@
 
     <hr class="separator fade-in-section is-visible">
 
-    <!-- 8. CHECKLIST -->
-    <section id="checklist" class="section fade-in-section">
-      <h2 class="section-title"><i class="fa-solid fa-list-check"></i> <span data-i18n="nav.checklist">Best Practices Checklist</span></h2>
-      <p class="section-lead" data-i18n="checklist.lead">Click each item to confirm you follow this practice. Build good habits one step at a time.</p>
-
-      <div class="checklist-wrap">
-        <div class="progress-text">
-          <span style="font-size:0.95rem; color:var(--text-primary);">Completion</span>
-          <span><span style="color:var(--text-primary);" id="progress-count">0</span>/7</span>
-        </div>
-        <div class="checklist-progress-bar"><div class="progress-fill" id="progress-bar"></div></div>
-        
-        <ul class="interactive-checklist" style="margin-top: 1.5rem;">
-          <li class="check-item"><div class="check-box"></div><span data-i18n="checklist.i1">I use unique, strong passwords for every account.</span></li>
-          <li class="check-item"><div class="check-box"></div><span data-i18n="checklist.i2">I have MFA enabled on all work accounts.</span></li>
-          <li class="check-item"><div class="check-box"></div><span data-i18n="checklist.i3">I avoid clicking suspicious links or attachments.</span></li>
-          <li class="check-item"><div class="check-box"></div><span data-i18n="checklist.i4">I keep all my software and systems up to date.</span></li>
-          <li class="check-item"><div class="check-box"></div><span data-i18n="checklist.i5">I use a VPN on public Wi-Fi networks.</span></li>
-          <li class="check-item"><div class="check-box"></div><span data-i18n="checklist.i6">I lock my screen when leaving my device unattended.</span></li>
-          <li class="check-item"><div class="check-box"></div><span data-i18n="checklist.i7">I share sensitive data only through approved channels.</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 9. QUIZ -->
-    <section id="quiz" class="section fade-in-section">
-      <h2 class="section-title"><i class="fa-solid fa-bolt"></i> <span data-i18n="nav.quiz">Knowledge Quiz</span></h2>
-      <p class="section-lead" data-i18n="quiz.lead">Answer the following questions to test your understanding. Select the best answer for each question.</p>
-      <!-- JS logic mounts here -->
-      <div id="quiz-container" class="quiz-wrap"></div>
-    </section>
-
     <!-- FOOTER -->
-    <footer class="footer fade-in-section is-visible">
-      <p class="footer-message">
-        <i class="fa-solid fa-shield-cat" style="color:var(--primary); font-size:1.2rem;"></i> 
-        <span data-i18n="footer.msg">You are part of the security team. Every action counts.</span>
-      </p>
+    <footer class="footer fade-in-section is-visible" style="justify-content: center;">
       <div class="footer-links" style="align-items: center;">
         <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; margin-right: 1rem;">© Oussama Nabbar</span>
         <a href="#" data-i18n="footer.policy">Security Policy</a>
